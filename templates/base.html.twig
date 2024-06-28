@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootswatch/4.4.1/slate/bootstrap.min.css">
+        <meta charset="UTF-8">
+        <title>{% block title %}Cloture {% endblock %}</title>
+        {% block stylesheets %}{% endblock %}
+    </head>
+    <body>
+    
+    <!--NAVBAR-->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand" href="/">Cloture </a>
+        <div class="collapse navbar-collapse" id="navbarColor02">
+            <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+                <a class="nav-link" href="/catalogue">Catalogue</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/tendance">En tendance</a>
+            </li>
+            </ul>
+        </div>
+    </nav>
+
+        {% block body %}{% endblock %}
+        {% block javascripts %}{% endblock %}
+    </body>
+</html>

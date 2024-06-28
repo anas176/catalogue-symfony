@@ -1,0 +1,49 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Clôture {% endblock %}
+
+{% block body %}
+
+<div class="jumbotron">
+    <h3>Liste de clôtures :</h3>
+    <br> <br>
+    <div class="row">
+        <div class="col-2">
+            <ul class="list-group">
+                {% for categorie in categories %}
+                <li class="list-group-item d-flex justify-content-between align-items-center">
+                    <a href="{{ path('idCategorie', {'categorie' : categorie.id}) }}">{{ categorie.nom }}</a>
+                </li>
+                {% endfor %}
+            </ul>
+        </div>
+        <div class="col-1">
+
+            <!--VIDE-->
+            
+        </div>
+        <div class="col-8">
+            <div class="row">
+                {% for cloture in clotures %}
+                <div class="col-4">
+                    <div class="card mb-3">
+                        <h3 class="card-header">{{ cloture.nom }}</h3>
+                        <div class="card-body">
+                            <h5 class="card-title">Réfences : </h5>
+                            <h6 class="card-subtitle text-muted">{{ cloture.reference }}</h6>
+                        </div>
+                        <p style="text-align: center;"><img src="{{ asset(cloture.image) }}" alt="" style="width:50%;"></p>
+                        <div class="card-body">
+                            <p>Consulté : {{ cloture.Compteur }} </p>
+                            <p style="text-align: center;"><a href="{{ path('idArticle', {'num' : cloture.id }) }}"><button type="button" class="btn btn-success">Plus d'info</button></a></p>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</div>
+
+
+{% endblock %}
